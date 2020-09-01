@@ -217,4 +217,5 @@ $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 		}).addTo(mymap);
 });
 ```
-
+Make these changes, save your work, and view the changes in your web browser: 
+<iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex3.html" style="width:100%; height:500px;"></iframe>
