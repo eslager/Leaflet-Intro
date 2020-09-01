@@ -24,9 +24,31 @@ The map above is a very simple Leaflet map. You can pan, zoom, and click it, but
 6. A bit of JavaScript to create the map in the div
 
 View the code below with comments explaining what each part does:
+```html
+<html>
+<head>
+	<title>Intro to Leaflet</title>
+ 	<!-- the Leaflet CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
+	<!-- the Leaflet JavaScript library -->
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+</head>
 
-[insert snippet]
-
+<body>
+  	<!-- code where we create and name the container that holds the map -->
+	<div id="map" style="height: 95%"></div>
+  	<!-- code where we build the map and its functionality -->
+	<script>
+		var mymap = L.map('map').setView([47.258, -122.465], 12);
+		var basemap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png', {
+			attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		}).addTo(mymap);
+		var point = L.marker([47.258, -122.465]).addTo(mymap);
+			point.bindPopup("<b>Hello world!</b><br>I am a popup.");
+  	</script>
+</body>
+</html>
+```
 Let's take a closer look at the JavaScript code that creates the map. Inside the <script> tags, we have code that: 
 
 1. Creates the map variable (named "```mymap```") 
