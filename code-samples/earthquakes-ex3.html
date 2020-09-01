@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Intro to Leaflet</title>
-  <!-- the Leaflet CSS -->
+  	<!-- the Leaflet CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"/>
 	<!-- the Leaflet JavaScript library -->
 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
@@ -11,9 +11,9 @@
 </head>
 
 <body>
-  <!-- code where we create and name the container that holds the map -->
+  	<!-- code where we create and name the container that holds the map -->
 	<div id="map" style="height: 100%"></div>
-  <!-- code where we build the map and its functionality -->
+  	<!-- code where we build the map and its functionality -->
 	<script>
 			var mymap = L.map('map').setView([0, 0], 2);
 			var basemap = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png', {
@@ -31,6 +31,6 @@
 			    }).addTo(mymap);
 			});
 
-  </script>
+  	</script>
 </body>
 </html>
