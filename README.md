@@ -16,10 +16,10 @@ We'll be working a little bit with all three of these. Writing and editing HTML,
 
 The map above is a very simple Leaflet map. You can pan, zoom, and click it, but it only requires a few lines of code that include: 
 
-1. An HTML page with <head> and <body> elements
+1. An HTML page with ```<head>``` and ```<body>``` elements
 2. A link to the Leaflet CSS styles
 3. A link to the Leaflet JavaScript library
-4. A <div> element to hold the map
+4. A ```<div>``` element to hold the map
 5. A height style specified for the map div
 6. A bit of JavaScript to create the map in the div
 
