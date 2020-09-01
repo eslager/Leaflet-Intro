@@ -25,7 +25,7 @@
 			    L.geoJson(data, {
 			        pointToLayer: function(feature, latlng){
 			            var marker = L.marker(latlng);
-									marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
+				  	marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
 			            return marker;
 			        }
 			    }).addTo(mymap);
