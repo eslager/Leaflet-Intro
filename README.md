@@ -61,15 +61,15 @@ Let's take a closer look at the JavaScript code that creates the map. Inside the
 
 ## Try it yourself
 
-For the next section of the tutorial, I suggest that you download this starter file [**insert link]**, open it in Atom, and follow along to make the changes yourself. 
+For the next section of the tutorial, I suggest that you download this [starter file](https://github.com/ejslgr/Leaflet-Intro/blob/master/code-samples/earthquakes-starter.html), open it in Atom, and follow along to make the changes yourself. 
 
-You'll note that the starter file (called earthquakes.html) is very similar to the basic Leaflet map we looked at above, except that we've removed the marker and changed the center and zoom level. Next, we'll add data from an external geojson file. 
+You'll note that the starter file (called earthquakes-starter.html) is very similar to the basic Leaflet map we looked at above, except that we've removed the marker and changed the center and zoom level. Next, we'll add some data.
 
 ## Working with GeoJSON data
 
 Adding data with the ```L.marker()``` method is simple, but it can be somewhat inconvenient. If we were mapping hundreds of points, we would have to manually type in the lat/long pairs for every point into our code. No thank you! Can't we just add a Shapefile? 
 
-Shapefiles, as you likely know, are the default vector data format when working with ArcGIS. With web mapping, however, the standard data type for vector data is GeoJSON. Like other formats for geospatial data, GeoJSON stores information about geographic features and their non-spatial attributes (e.g. a line indicating a street and the name of the street). It is based on JavaScript Object Notation, which means it will be more familiar to web developers than GIS professionals, but it's fairly easy to work with and understand.  
+Shapefiles, as you likely know, are the default vector data format when working with ArcGIS. With web mapping, however, the standard data format is GeoJSON. Like other formats for geospatial data, GeoJSON stores information about geographic features and their non-spatial attributes (e.g. a line indicating a street and the name of the street). It is based on JavaScript Object Notation, which means it will be more familiar to web developers than GIS professionals, but it's fairly easy to work with and understand.  
 
 Instead of storing data in tables, GeoJSON stores data in "key: value pairs." These are both machine readable and human readable. Here's an example: 
 ```geojson
@@ -107,7 +107,7 @@ Instead of storing data in tables, GeoJSON stores data in "key: value pairs." Th
     ]
   }
   ```
-In this file, we have a collection of features. Each feature has a geometry and properties. The geometry describes the geospatial attributes. For instance, the first feature is a point located at lat: 0.5 and lon: 102.0. The properties are the non-spatial attributes. In this case, each feature has a name, and the line and polygon features also have a property that lists of the number of vertices in the shape. 
+In this file, we have a collection of features. Each feature has a geometry and properties. The geometry describes the geographic feature. For instance, the first feature is a point located at lat: 0.5 and lon: 102.0. The properties are the non-spatial attributes. In this case, each feature has a name, and the line and polygon features also have a property that lists of the number of vertices in the shape. 
 
 If you want to know more about GeoJSON, a good place to start is its [Wikipedia page](https://en.wikipedia.org/wiki/GeoJSON). Note that many open data portals make data available to download in the GeoJSON format, but it's also possible to convert data in other formats (like Shapefiles, CSVs, KMLs, etc.) into GeoJSON with various tools. 
 
@@ -136,11 +136,11 @@ $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 });
 ```
 
-```$.getJSON``` loads the file located at the URL that is specified. Then, ```L.geoJon()``` creates a vector layer from the GeoJSON and adds it to the map with ```.addTo()```. 
+```$.getJSON``` loads the file located at the URL that is specified. Then, ```L.geoJson()``` creates a vector layer from the GeoJSON and adds it to the map with ```.addTo()```. 
 
 Save your work and open it in your web browser and it should look like this: 
 
-[Insert map]
+<iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex1.html" style="width:100%; height:500px;"></iframe>
 
 ## Let's make those markers clickable!
 
