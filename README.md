@@ -241,6 +241,22 @@ Sans-serif fonts are generally easier to read on digital screens than serified f
 	}
 	</style>
 ```
+Next, let's add some explanatory text. In the ```<body>``` of the HTML document, below the code that creates the map div but above the opening ```<script>``` tag, add the following: 
+```html
+	<p>This map depicts all earthquakes that have occurred in the past 24 hours. Data comes from the <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS Live Earthquake Feed</a> and is updated every minute. Earthquakes are visualized with proportional symbols where earthquakes of larger magnitude are depicted with larger circle markers. Click on a marker for more information about the earthquake.</p>
+	<p>The Pacific Northwest lies along the Cascadia fault. Tectonic activity along this fault could cause a catastrophic earthquake that would produce major damage throughout our region. Learn about how researchers at the University of Washington are modelling earthquake risk and preparing for disaster response at the <a href="https://hazards.uw.edu/geology/m9/">M9 Project</a>.</p>
+```
+The ```<p>``` tag is an HTML element that we use to enclose paragraphs. The ```<a>``` tag (a for 'anchor') allows us to link to other URLs, which we use here to link to our data source and an external website where users can learn more about earthquake preparedness research in the PNW. 
 
+Having text span the entire width of the browser window makes for very short, wide paragraphs. Let's limit the width and center the main content on our page with a little extra CSS styling. Back in the ```<head>``` inside the ```<style>``` tags, update the CSS as follows: 
 
+```css
+body {
+	font-family: sans-serif;
+	max-width: 900px;
+	margin: auto;
+}
+```
+Now, our map and the explanatory text will not exceed a width of 900px, no matter how wide the browser screen is. ```margin: auto;``` also centers the content by automatically adding margins of equal width on either side of the main body content. We could do a whole lot more with CSS to make our page appear more polished and professional, but this is enough for now. 
 
+Finally, let's add a legend. 
