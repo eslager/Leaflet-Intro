@@ -168,7 +168,8 @@ Now, when we click on each earthquake marker, we should get a pop-up that reads 
 marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
 ```
 
-This code uses HTML to set the content of the marker pop-up. It selects information from GeoJSON using the ```feature.properties. ``` notation to display the 'place,' 'mag,' and 'url' properties for the selected feature. We can reference what these properties are in the [GeoJSON metadata](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).  
+This code uses HTML to set the content of the marker pop-up. It selects information from GeoJSON using the ```feature.properties. ``` notation to display the 'place,' 'mag,' and 'url' properties for the selected feature. We can reference what these properties are in the [GeoJSON metadata](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php). Now, the markers should be clickable: 
+<iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex2.html" style="width:100%; height:500px;"></iframe>
 
 ## Adding some style: proportional symbols
 
