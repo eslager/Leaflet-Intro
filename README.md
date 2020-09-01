@@ -1,10 +1,8 @@
-# Leaflet-Intro
-Introduction to Leaflet workshop for WWGT
-### Introduction to web mapping with Leaflet
+# Introduction to web mapping with Leaflet
 
-This is a tutorial written by [Emma Slager](http://faculty.washington.edu/ejslager/) for the Washington Women in GIS & Technology group in September 2020. It builds on an excellent [Maptime Boston tutorial](https://maptimeboston.github.io/leaflet-intro/), but is tailored a bit to our local context (#earthquakes!) and assumes an audience that knows a lot about mapping but might be brand new to web development.
+This is a tutorial written by [Emma Slager](http://faculty.washington.edu/ejslager/) for the Washington Women in GIS & Technology group in September 2020. It builds on an excellent [Maptime Boston tutorial](https://maptimeboston.github.io/leaflet-intro/), but is tailored a bit to our local context (#earthquakes!) and assumes an audience that knows a lot about mapping but might be new to web development.
 
-#### Why Leaflet? 
+## Why Leaflet? 
 
 [Leaflet](https://leafletjs.com/) is one of many different frameworks that exist for making interactive web maps. I like it because it is free and open-source, is lightweight and flexible, and can be easily combined with other tools to expand its capabilities. Most importantly for a workshop like this, you can build Leaflet maps without signing up for any kind of account, which makes it an ideal framework for new learners. 
 
@@ -12,7 +10,7 @@ Leaflet is a JavaScript library. JavaScript is a programming language used exten
 
 We'll be working a little bit with all three of these. Writing and editing HTML, CSS, and JS files requires a text editor. I recommend [Atom.io](https://atom.io/). It's free and available on Windows, Mac, and Linux operating systems. 
 
-#### A basic Leaflet map
+## A basic Leaflet map
 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/basic.html" style="width:100%; height:500px;"></iframe>
 
@@ -61,27 +59,60 @@ Let's take a closer look at the JavaScript code that creates the map. Inside the
 6. Uses ```L.marker()```to create a point marker at lat/long 42.258, -122.465 and ```addTo()``` to add the point marker to the map
 7. Uses ```.bindPopup``` to create a popup that appears when the point marker is clicked. We use HTML ```("<b>Hello world!</b><br>I am a popup.")``` to provide the content of the popup. 
 
-#### Try it yourself
+## Try it yourself
 
 For the next section of the tutorial, I suggest that you download this starter file [**insert link]**, open it in Atom, and follow along to make the changes yourself. 
 
 You'll note that the starter file (called earthquakes.html) is very similar to the basic Leaflet map we looked at above, except that we've removed the marker and changed the center and zoom level. Next, we'll add data from an external geojson file. 
 
-#### Working with GeoJSON data
+## Working with GeoJSON data
 
 Adding data with the ```L.marker()``` method is simple, but it can be somewhat inconvenient. If we were mapping hundreds of points, we would have to manually type in the lat/long pairs for every point into our code. No thank you! Can't we just add a Shapefile? 
 
 Shapefiles, as you likely know, are the default vector data format when working with ArcGIS. With web mapping, however, the standard data type for vector data is GeoJSON. Like other formats for geospatial data, GeoJSON stores information about geographic features and their non-spatial attributes (e.g. a line indicating a street and the name of the street). It is based on JavaScript Object Notation, which means it will be more familiar to web developers than GIS professionals, but it's fairly easy to work with and understand.  
 
 Instead of storing data in tables, GeoJSON stores data in "key: value pairs." These are both machine readable and human readable. Here's an example: 
+```geojson
+{ "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [102.0, 0.5]},
+      "properties": {"name": "Example Point"}
+      },
+    { "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [102.0, 0.0], [103.0, 1.0], [104.0, 0.0], [105.0, 1.0]
+          ]
+        },
+      "properties": {
+        "name": "example line",
+        "number of vertices": 4
+        }
+      },
+    { "type": "Feature",
+       "geometry": {
+         "type": "Polygon",
+         "coordinates": [
+           [ [100.0, 0.0], [101.0, 0.0], [101.0, 1.0],
+             [100.0, 1.0], [100.0, 0.0] ]
+           ]
 
-[Insert GeoJSON example]
-
+       },
+       "properties": {
+         "name": "example polygon",
+         "number of vertices": 5}
+         }
+       }
+    ]
+  }
+  ```
 In this file, we have a collection of features. Each feature has a geometry and properties. The geometry describes the geospatial attributes. For instance, the first feature is a point located at lat: 0.5 and lon: 102.0. The properties are the non-spatial attributes. In this case, each feature has a name, and the line and polygon features also have a property that lists of the number of vertices in the shape. 
 
 If you want to know more about GeoJSON, a good place to start is its [Wikipedia page](https://en.wikipedia.org/wiki/GeoJSON). Note that many open data portals make data available to download in the GeoJSON format, but it's also possible to convert data in other formats (like Shapefiles, CSVs, KMLs, etc.) into GeoJSON with various tools. 
 
-#### Adding GeoJSON data to our Leaflet map
+## Adding GeoJSON data to our Leaflet map
 
 To our map, we're going to add a live GeoJSON feed of all the earthquakes that occurred in the past day. USGS maintains numerous earthquake feeds, and you can see a summary of the information it makes available about these quakes here: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 
@@ -112,7 +143,7 @@ Save your work and open it in your web browser and it should look like this:
 
 [Insert map]
 
-#### Let's make those markers clickable!
+## Let's make those markers clickable!
 
 If we hover over the markers, we should see the cursor change from the panning hand to the pointing finger, suggesting that we can click on the markers. However, clicking doesn't seem to do anything! Let's change that. Let's make it so that when we click the markers, we get a pop-up window that tells us the location and magnitude of the earthquake and get a link we can click for more information. Thankfully each of these things (location, magnitude, and further info link) are available as properties in the earthquake GeoJSON. 
 
@@ -140,7 +171,7 @@ marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + f
 
 This code uses HTML to set the content of the marker pop-up. It selects information from GeoJSON using the ```feature.properties. ``` notation to display the 'place,' 'mag,' and 'url' properties for the selected feature. We can reference what these properties are in the [GeoJSON metadata](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).  
 
-#### Adding some style: proportional symbols
+## Adding some style: proportional symbols
 
 By default, the points are styled with generic blue markers. This is fine, but what if we wanted to style the markers based on some attribute, such as magnitude. We can use JavaScript to make a proportional symbol map using conditional statements. 
 
