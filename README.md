@@ -72,7 +72,7 @@ Adding data with the ```L.marker()``` method is simple, but it can be somewhat i
 Shapefiles, as you likely know, are the default vector data format when working with ArcGIS. With web mapping, however, the standard data format is GeoJSON. Like other formats for geospatial data, GeoJSON stores information about geographic features and their non-spatial attributes (e.g. a line indicating a street and the name of the street). It is based on JavaScript Object Notation, which means it will be more familiar to web developers than GIS professionals, but it's fairly easy to work with and understand.  
 
 Instead of storing data in tables, GeoJSON stores data in "key: value pairs." These are both machine readable and human readable. Here's an example: 
-```geojson
+```json
 { "type": "FeatureCollection",
   "features": [
     { "type": "Feature",
@@ -219,3 +219,7 @@ $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 ```
 Make these changes, save your work, and view the changes in your web browser: 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex3.html" style="width:100%; height:500px;"></iframe>
+
+## Adding a legend, title, and expanatory text
+
+
