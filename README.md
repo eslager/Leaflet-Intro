@@ -220,6 +220,18 @@ $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 Make these changes, save your work, and view the changes in your web browser: 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex3.html" style="width:100%; height:500px;"></iframe>
 
-## Adding a legend, title, and expanatory text
+## Adding a title, legend, and expanatory text
+
+Finally, let's practice good cartography and add some vital map elements. We'll add the title and explanatory text outside of the map and in the web page itself. At the very top of the ```<body>``` of your html document, above the code where you create the div that holds the map, add the following line of code: 
+```html
+<h1>Earthquakes that have occurred in the past 24 hours</h1>
+```
+```<h1>``` is an HTML element that serves as a header. h1 is the largest header, h2 would be a smaller sub-header, h3 smaller yet, etc. 
+
+When you save and preview the changes, you might now have to scroll down a bit to see both the header and the full map. Let's shrink the size of the map div so that this isn't the case. Change the ```"height"``` attribute of the map div to 80% instead of 95%: 
+```html
+	<div id="map" style="height: 80%"></div>
+```
+
 
 
