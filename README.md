@@ -142,7 +142,7 @@ Save your work and open it in your web browser and it should look like this:
 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex1.html" style="width:100%; height:500px;"></iframe>
 
-## Let's make those markers clickable!
+## Adding interactivity: Let's make those markers clickable!
 
 If we hover over the markers, we should see the cursor change from the panning hand to the pointing finger, suggesting that we can click on the markers. However, clicking doesn't seem to do anything! Let's change that. Let's make it so that when we click the markers, we get a pop-up window that tells us the location and magnitude of the earthquake and get a link we can click for more information. Thankfully each of these things (location, magnitude, and further info link) are available as properties in the earthquake GeoJSON. 
 
@@ -173,7 +173,7 @@ This code uses HTML to set the content of the marker pop-up. It selects informat
 
 ## Adding some style: proportional symbols
 
-By default, the points are styled with generic blue markers. This is fine, but what if we wanted to style the markers based on some attribute, such as magnitude. We can use JavaScript to make a proportional symbol map using conditional statements. 
+By default, the points are styled with generic blue markers. This is fine, but what if we wanted to style the markers based on some attribute, such as magnitude? We can use JavaScript to make a proportional symbol map using conditional statements. 
 
 First, let's change our markers to circle markers. Make the following change to your code. JavaScript is case sensitive, so make sure you capitalize correctly!
 
@@ -197,22 +197,22 @@ var marker = L.circleMarker(latlng, {radius: feature.properties.mag, color: 'red
 
 Here we're pulling our radius value from the magnitude property of the GeoJSON. At the time of my writing this tutorial, there had been a lot of small earthquakes in North America and a smaller number of larger earthquakes in the Pacific and Indian Oceans. What do the patterns look like on the day you're mapping the data? 
 
-Currently, the data is not classified, as is typical with proportional symbol maps of numeric data. But what if we were working with ordered categorical data? Let's say we wanted to put the quakes into three categories: tiny (quakes under mag 1), small (quakes between mag 1 and 2.5), medium (between mag 2.5 and 4.5), and large (quakes larger than mag 4.5). We can achieve this with an if/else statement: 
+Currently, the data is not classified, as is typical with proportional symbol maps of numeric data. But what if we were working with ordered categorical data? Let's say we wanted to put the quakes into four categories: tiny (quakes under mag 1), small (quakes between mag 1 and 2.5), medium (between mag 2.5 and 4.5), and large (quakes larger than mag 4.5). We can achieve this with an if/else statement: 
 
 ```javascript
 $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",function(data){
 	// add GeoJSON layer to the map once the file is loaded
 		L.geoJson(data, {
 			pointToLayer: function(feature, latlng){
-                var radiusSize,
-					mag = feature.properties.mag;
-                if (mag > 4.5) radiusSize = 10;
-				else if ( mag > 2.5) radiusSize = 5;
-                else if (mag > 1) radiusSize = 2;
-				else radiusSize = 1;
-                var marker = L.circleMarker(latlng, {radius: radiusSize, color: 'red'});
-			marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
-			return marker;
+                		var radiusSize,
+				mag = feature.properties.mag;
+                			if (mag > 4.5) radiusSize = 10;
+					else if ( mag > 2.5) radiusSize = 6;
+                			else if (mag > 1) radiusSize = 4;
+					else radiusSize = 2;
+                		var marker = L.circleMarker(latlng, {radius: radiusSize, color: 'red'});
+				marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
+				return marker;
 			}
 		}).addTo(mymap);
 });
