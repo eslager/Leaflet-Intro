@@ -113,9 +113,9 @@ If you want to know more about GeoJSON, a good place to start is its [Wikipedia 
 
 ## Adding GeoJSON data to our Leaflet map
 
-To our map, we're going to add a live GeoJSON feed of all the earthquakes that occurred in the past day. USGS maintains numerous earthquake feeds, and you can see a summary of the information it makes available about these quakes here: https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+To our map, we're going to add a live GeoJSON feed of all the earthquakes that occurred in the past day. USGS maintains numerous earthquake feeds, and you can see a summary of the information it makes available about these quakes here: [https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php]
 
-The feed we want is all earthquakes of every magnitude that occurred in the last 24 hours: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson If you click on this link, you'll recognize that what you're looking at is a GeoJSON file: a collection of features that have a specified geometry and numerous properties or non-spatial attributes.
+The feed we want is all earthquakes of every magnitude that occurred in the last 24 hours: [https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson] If you click on this link, you'll recognize that what you're looking at is a GeoJSON file: a collection of features that have a specified geometry and numerous properties or non-spatial attributes.
 
 Here's the code we use to add the earthquake GeoJSON to our map. If you're following along in Atom, add the lines of code as indicated, then view your changes in a web browser. 
 
