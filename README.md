@@ -104,7 +104,6 @@ Instead of storing data in tables, GeoJSON stores data in "key: value pairs." Th
          "name": "example polygon",
          "number of vertices": 5}
          }
-       }
     ]
   }
   ```
