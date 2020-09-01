@@ -232,6 +232,15 @@ When you save and preview the changes, you might now have to scroll down a bit t
 ```html
 	<div id="map" style="height: 80%"></div>
 ```
+Sans-serif fonts are generally easier to read on digital screens than serified fonts, but our text defaults to Times New Roman. Let's change that with some CSS styling. In the ```<head>``` of the HTML document, beneath the lines of code where we add the Leaflet and JQuery links, add the following: 
+```html
+	<!--CSS styles-->
+	<style>
+	body {
+		font-family: sans-serif;
+	}
+	</style>
+```
 
 
 
