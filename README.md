@@ -14,6 +14,8 @@ We'll be working a little bit with all three of these. Writing and editing HTML,
 
 #### A basic Leaflet map
 
+<iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/basic.html" style="width:100%; height:500px;"></iframe>
+
 The map above is a very simple Leaflet map. You can pan, zoom, and click it, but it only requires a few lines of code that include: 
 
 1. An HTML page with ```<head>``` and ```<body>``` elements
