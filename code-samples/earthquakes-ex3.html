@@ -24,9 +24,9 @@
 			$.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson",function(data){
 			    L.geoJson(data, {
 			        pointToLayer: function(feature, latlng){
-									var marker = L.circleMarker(latlng, {radius: feature.properties.mag, color: 'red'});
-									marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
-			            return marker;
+					var marker = L.circleMarker(latlng, {radius: feature.properties.mag, color: 'red'});
+					marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + feature.properties.mag + "<br><a href =" + feature.properties.url +">More info</a>");
+			            	return marker;
 			        }
 			    }).addTo(mymap);
 			});
