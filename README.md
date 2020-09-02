@@ -257,7 +257,9 @@ body {
 	margin: auto;
 }
 ```
-Now, our map and the explanatory text will not exceed a width of 900px, no matter how wide the browser screen is. ```margin: auto;``` also centers the content by automatically adding margins of equal width on either side of the main body content. We could do a whole lot more with CSS to make our page appear more polished and professional, but this is enough for now. 
+Now, our map and the explanatory text will not exceed a width of 900px, no matter how wide the browser screen is. ```margin: auto;``` also centers the content by automatically adding margins of equal width on either side of the main body content. We could do a whole lot more with CSS to make our page appear more polished and professional, but this is enough for now. Looking good!
+
+<iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex4.html" style="width:100%; height:500px;"></iframe>
 
 Finally, let's add a legend. Somewhat counter-intuitively, adding a legend is not particularly easy with Leaflet. Let's hope that some future version release changes that. In the meantime, adding a legend to our map will take four final steps: linking to one more library, creating the legend content in HTML, styling the legend with CSS, and adding the legend with JavaScript. First, in the ```<head>``` add this line of code below your link the JQuery library and above the ```<style>``` section: 
 ```html
@@ -313,4 +315,19 @@ Now the legend should appear on the map itself. But it's hard to read! Let's add
 		padding:5px 25px 5px 0px;
 	}
 ```
+The final version of the map should look something like this! 
+<iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex5.html" style="width:100%; height:500px;"></iframe>
 
+## Onward!
+
+Though we accomplished a lot in this tutorial (setting up web map, adding data, adding interactivity, styling our data, and adding additional elements), we've barely scratched the surface of what you can do with web mapping. We spend two quarters on these techniques in the [Masters of Geospatial Technologies program at UWT](https://www.tacoma.uw.edu/urban-studies/ms-program-overview), and the possibilities are endless. If you're interested in going further, check out some of the resources below. This list was curated by Andy Woodruff, Ryan Mullins, and Cristen Jones (the folks behind [the tutorial](https://maptimeboston.github.io/leaflet-intro/) on which I based much of the above!) and updated by me.  
+
+*   [Tutorials on the main Leaflet site](http://leafletjs.com/examples.html
+*   [Leaflet API reference](http://leafletjs.com/reference.html)
+*   [Previews and URLs for many basemap options](http://leaflet-extras.github.io/leaflet-providers/preview/)
+*   [Mapbox.js, a library that builds on Leaflet and integrates with Mapbox maps](https://docs.mapbox.com/mapbox-gl-js/api/)
+*   [How Simplicity Will Save GIS](http://vimeo.com/106112939), a talk by Vladimir Agafonkin at FOSS4G 2014, demonstrating the thinking behind Leaflet
+*   [Web Mapping: A Workbook for Interactive Cartography and Visualization on the Open Web](https://github.com/uwcartlab/webmapping), from Robert E. Roth and collaborators at the University of Wisconson, Madison
+*   [Dynamic Cartography lab assignments](https://github.com/RyanMullins/Geog461W.SP2014.Labs) from Ryan Mullins, covering many techniques and technologies, including Leaflet.
+*   [Leaflet and Mapbox JavaScript API Fundamentals](https://github.com/geografa/foss4g2014-workshops/blob/master/Leaflet-and-Mapbox-JavaScript-API-Fundamentals.md) workshop by Rafa Gutierrez
+*   Texts such as [Web Cartography: Map Design for Interactive and Mobile Devices](http://www.amazon.com/Web-Cartography-Design-Interactive-Devices/dp/1439876223) can be good for understanding good map design principles.
