@@ -259,4 +259,58 @@ body {
 ```
 Now, our map and the explanatory text will not exceed a width of 900px, no matter how wide the browser screen is. ```margin: auto;``` also centers the content by automatically adding margins of equal width on either side of the main body content. We could do a whole lot more with CSS to make our page appear more polished and professional, but this is enough for now. 
 
-Finally, let's add a legend. 
+Finally, let's add a legend. Somewhat counter-intuitively, adding a legend is not particularly easy with Leaflet. Let's hope that some future version release changes that. In the meantime, adding a legend to our map will take four final steps: linking to one more library, creating the legend content in HTML, styling the legend with CSS, and adding the legend with JavaScript. First, in the ```<head>``` add this line of code below your link the JQuery library and above the ```<style>``` section: 
+```html
+<script src= "https://cdn.jsdelivr.net/npm/leaflet-legend@1.0.2/leaflet-legend.min.js"></script>
+```
+This library (or 'plugin' as Leaflet calls them) was made by a Leaflet user to make it a bit easier to add legends. This is actually one of the things I love about Leaflet; its user community is empowered and encouraged to make add-ons that increase the functionality of the framework. Next, add the following HTML code to the ```<body>``` of your document, below the explanatory text and above the ```<script>``` tag. 
+```html
+<div id="legend">
+		<h3><center>Earthquake magnitude</center></h3>
+		<ul style="list-style-type:none">
+			<li>
+				<svg width="24" height="24">
+					<circle cx="12" cy="20" r="2" stroke="red" stroke-width="3" fill="red" fill-opacity=".4"/>
+				</svg>
+				<text>Less than 1</text>
+			</li>
+			<li>
+				<svg width="24" height="24">
+					<circle cx="12" cy="18" r="4" stroke="red" stroke-width="3" fill="red" fill-opacity=".4"/>
+				</svg>
+				<text>Between 1 and 2.5</text>
+			</li>
+			<li>
+				<svg width="24" height="24">
+					<circle cx="12" cy="14" r="6" stroke="red" stroke-width="3" fill="red" fill-opacity=".4"/>
+				</svg>
+				<text>Between 2.5 and 4.5</text>
+			</li>
+			<li>
+				<svg width="24" height="24">
+					<circle cx="12" cy="12" r="10" stroke="red" stroke-width="3" fill="red" fill-opacity=".4"/>
+				</svg>
+				<text x="0" y="0)">Greater than 4.5</text>
+			</li>
+		</ul>
+	</div>
+```
+Save your changes and view them in the web browser. If you scroll down, you should see the legend below the explanatory text. However, we want this to appear on the map itself. Toward the bottom of the ```<body>```, just before the ```</script>``` tag closes, add the following JavaScript code: 
+```javascript
+	var Legend =  new L.Control.Legend({
+		position: 'bottomright',
+	});
+
+	mymap.addControl(Legend);
+	$(".legend-container").append( $("#legend") );
+```
+Now the legend should appear on the map itself. But it's hard to read! Let's add a little CSS styling to fix that. In the ```<head>```, inside the ```<style>``` section of your code, add the following CSS: 
+```css
+	#legend {
+		line-height: 0px;
+		background: white;
+		opacity: 0.8;
+		padding:5px 25px 5px 0px;
+	}
+```
+
