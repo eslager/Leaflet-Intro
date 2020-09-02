@@ -322,7 +322,7 @@ The final version of the map should look something like this!
 
 Though we accomplished a lot in this tutorial (setting up web map, adding data, adding interactivity, styling our data, and adding additional elements), we've barely scratched the surface of what you can do with web mapping. We spend two quarters on these techniques in the [Masters of Geospatial Technologies program at UWT](https://www.tacoma.uw.edu/urban-studies/ms-program-overview), and the possibilities are endless. If you're interested in going further, check out some of the resources below. This list was curated by Andy Woodruff, Ryan Mullins, and Cristen Jones (the folks behind [the tutorial](https://maptimeboston.github.io/leaflet-intro/) on which I based much of the above!) and updated by me.  
 
-*   [Tutorials on the main Leaflet site](http://leafletjs.com/examples.html
+*   [Tutorials on the main Leaflet site](http://leafletjs.com/examples.html)
 *   [Leaflet API reference](http://leafletjs.com/reference.html)
 *   [Previews and URLs for many basemap options](http://leaflet-extras.github.io/leaflet-providers/preview/)
 *   [Mapbox.js, a library that builds on Leaflet and integrates with Mapbox maps](https://docs.mapbox.com/mapbox-gl-js/api/)
