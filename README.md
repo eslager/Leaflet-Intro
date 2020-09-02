@@ -13,6 +13,7 @@ We'll be working a little bit with all three of these. Writing and editing HTML,
 ## A basic Leaflet map
 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/basic.html" style="width:100%; height:500px;"></iframe>
+[View this example on its own](https://ejslgr.github.io/Leaflet-Intro/code-samples/basic.html)
 
 The map above is a very simple Leaflet map. You can pan, zoom, and click it, but it only requires a few lines of code that include: 
 
@@ -141,6 +142,8 @@ $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 Save your work and open it in your web browser and it should look like this: 
 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex1.html" style="width:100%; height:500px;"></iframe>
+[View this example on its own](https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex1.html)
+
 
 ## Adding interactivity: Let's make those markers clickable!
 
@@ -170,6 +173,7 @@ marker.bindPopup("Location: " + feature.properties.place + "<br>Magnitude: " + f
 
 This code uses HTML to set the content of the marker pop-up. It selects information from GeoJSON using the ```feature.properties. ``` notation to display the 'place,' 'mag,' and 'url' properties for the selected feature. We can reference what these properties are in the [GeoJSON metadata](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php). Now, the markers should be clickable: 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex2.html" style="width:100%; height:500px;"></iframe>
+[View this example on its own](https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex2.html)
 
 ## Adding some style: proportional symbols
 
@@ -219,6 +223,7 @@ $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geo
 ```
 Make these changes, save your work, and view the changes in your web browser: 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex3.html" style="width:100%; height:500px;"></iframe>
+[View this example on its own](https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex3.html)
 
 ## Adding a title, legend, and expanatory text
 
@@ -260,6 +265,7 @@ body {
 Now, our map and the explanatory text will not exceed a width of 900px, no matter how wide the browser screen is. ```margin: auto;``` also centers the content by automatically adding margins of equal width on either side of the main body content. We could do a whole lot more with CSS to make our page appear more polished and professional, but this is enough for now. Looking good!
 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex4.html" style="width:100%; height:500px;"></iframe>
+[View this example on its own](https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex4.html)
 
 Finally, let's add a legend. Somewhat counter-intuitively, adding a legend is not particularly easy with Leaflet. Let's hope that some future version release changes that. In the meantime, adding a legend to our map will take four final steps: linking to one more library, creating the legend content in HTML, styling the legend with CSS, and adding the legend with JavaScript. First, in the ```<head>``` add this line of code below your link the JQuery library and above the ```<style>``` section: 
 ```html
@@ -317,6 +323,7 @@ Now the legend should appear on the map itself. But it's hard to read! Let's add
 ```
 The final version of the map should look something like this! 
 <iframe src="https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex5.html" style="width:100%; height:500px;"></iframe>
+[View this example on its own](https://ejslgr.github.io/Leaflet-Intro/code-samples/earthquakes-ex5.html)
 
 ## Onward!
 
