@@ -62,9 +62,9 @@ Let's take a closer look at the JavaScript code that creates the map. Inside the
 
 ## Try it yourself
 
-For the next section of the tutorial, I suggest that you download this <a href="https://github.com/ejslgr/Leaflet-Intro/blob/master/code-samples/earthquakes-starter.html" download>starter file</a>, open it in Atom, and follow along to make the changes yourself. 
+For the remainder of the tutorial, I suggest that you copy the code from this <a href="https://github.com/ejslgr/Leaflet-Intro/blob/master/code-samples/earthquakes-starter.html" download>starterfile </a>, paste it into a new HTML document in Atom, and follow along to make the changes yourself. 
 
-You'll note that the starter file (called earthquakes-starter.html) is very similar to the basic Leaflet map we looked at above, except that we've removed the marker and changed the center and zoom level. Next, we'll add some data.
+You'll note that the starter file is very similar to the basic Leaflet map we looked at above, except that we've removed the marker and changed the center and zoom level. Next, we'll add some data.
 
 ## Working with GeoJSON data
 
