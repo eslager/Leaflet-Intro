@@ -1,4 +1,4 @@
-# Introduction to web mapping with Leaflet
+# Introduction to web mapping with the Leaflet framework
 
 This is a tutorial written by [Emma Slager](http://faculty.washington.edu/ejslager/) for the Washington Women in GIS & Technology group in September 2020 and updated in November 2021. It builds on an excellent [Maptime Boston tutorial](https://maptimeboston.github.io/leaflet-intro/), but is tailored a bit to our local context (#earthquakes!) and assumes an audience that knows a lot about mapping but might be new to web development.
 
